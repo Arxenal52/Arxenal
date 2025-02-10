@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naomi</title>
+    <style>
+        body {
+            background-color: #ffe4e1;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        .message {
+            font-size: 24px;
+            color: #d147a3;
+            margin-top: 20px;
+        }
+        .gif-container {
+            margin-top: 20px;
+        }
+        .gif-hidden {
+            display: none;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hola Princesa hermosa 💖</h1>
+        <p>Podrías darle click al botón de abajito, quiero decirte algo mi vida...</p>
+        <button onclick="showMessage(1)">Pícale aquí mero miamor</button>
+        <p id="msg1" class="message hidden">Princesa hermosa, estoy muy enamorado de tí 💕</p>
+        <button id="btn2" class="hidden" onclick="showMessage(2)">Continúa</button>
+        <p id="msg2" class="message hidden">Te amo y te adoro con todo mi corazón ✨</p>
+        <button id="btn3" class="hidden" onclick="showMessage(3)">Sigue</button>
+        <p id="msg3" class="message hidden">Tengo una pregunta para ti...</p>
+        <button id="finalBtn" class="hidden" onclick="finalMessage()">Aquí viene</button>
+        <h2 id="finalMsg" class="message hidden">¿Quieres ser mi San Valentín? 💘</h2>
+        <div class="gif-container">
+            <img id="catGif" class="gif-hidden" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3lodTVrYTZja3p0aGptb2dqMnp2dXA5NnllOWMwYjBjdjRiZHJqdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c76IJLufpNwSULPk77/giphy.gif" alt="Gatito enviando besos">
+        </div>
+    </div>
+
+    <script>
+        function showMessage(step) {
+            document.getElementById('msg' + step).classList.remove('hidden');
+            if (step < 3) {
+                document.getElementById('btn' + (step + 1)).classList.remove('hidden');
+            } else {
+                document.getElementById('finalBtn').classList.remove('hidden');
+            }
+        }
+        function finalMessage() {
+            document.getElementById('finalMsg').classList.remove('hidden');
+            document.getElementById('catGif').classList.remove('gif-hidden');
+        }
+    </script>
+</body>
+</html>
